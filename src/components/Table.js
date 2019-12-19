@@ -112,7 +112,7 @@ const getColumns = (rootDir) => [
   },
   {
     width: '100px',
-    title: 'Quality Audit',
+    title: 'Lighthouse Audit',
     key: 'audit',
     render: ({ lighthouseReportLink, lighthouseSummaryLink }) => <AuditResultsButton lighthouseReportLink={lighthouseReportLink} lighthouseSummaryLink={lighthouseSummaryLink} />
   },
