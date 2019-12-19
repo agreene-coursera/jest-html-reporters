@@ -4,6 +4,7 @@ import copy from 'copy-to-clipboard'
 import { getRecordClass, getFormatTime, getExistKeys } from '@/untils'
 import DetailTable from './DetailTable'
 import ErrorButton from './ErrorButton'
+import AuditResultsButton from './AuditResultsButton'
 
 // export const file = '/Users/harry.hou/Desktop/harry/salesforce/salesforce-cti-widget/'
 import { Consumer } from '../contexts/expand'
@@ -108,6 +109,12 @@ const getColumns = (rootDir) => [
           return (testExecError || numFailingTests > 0 || numPendingTests > 0)
       }
     },
+  },
+  {
+    width: '100px',
+    title: 'Quality Audit',
+    key: 'audit',
+    render: ({ lighthouseReportLink, lighthouseSummaryLink }) => <AuditResultsButton lighthouseReportLink={lighthouseReportLink} lighthouseSummaryLink={lighthouseSummaryLink} />
   },
   {
     width: '100px',
